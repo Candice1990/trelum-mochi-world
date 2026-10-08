@@ -1,27 +1,27 @@
-# Mochi’s Little World · Trelum
+# Mochi · Snack Catch — Trelum
 
-A cozy, English-language virtual bunny game. Feed and cuddle Mochi, play a four-pair memory game, earn pretend coins, decorate the room and collect friendship badges.
+Play: https://candice1990.github.io/trelum-mochi-world/
 
-## Play
+A single-rule arcade game: move the cat and its bowl left and right, catch falling fish-shaped treats, and try to beat your best. Three missed treats ends the round. Speed increases every five catches.
 
-Open index.html, or serve this folder with a local static web server. No build step or dependencies are required. Layout adapts to phones and desktop screens.
+Mouse or arrow keys on desktop; swipe on a phone. On-screen direction buttons also work. Pause and replay are available. Switching tabs pauses the game automatically. Best score saves locally on this browser; no accounts, purchases, analytics or remote API calls.
 
-- Tap the bunny for a cuddle; use Snack time and Cozy nap for care.
-- Complete Snack match to earn 12 coins, plus a once-per-adventure task bonus.
-- Spend game coins on furniture and a strawberry hat. Owned items can be shown or hidden without paying again.
-- Complete four little moments to unlock the next adventure. Adventures advance only when you choose; nothing worsens while you are away.
-- Progress saves in this browser. Settings can download or restore a JSON backup. Clearing browser data removes the local save; saves do not sync across devices.
+The lifelike cat uses three AI-generated transparent poses with breathing, paw and jump animations. It is a 2D animated asset with photographic depth, not a real-time 3D model. Trelum brand assets are supplied by the brand owner. This is a prepared product showcase, not a submitted child’s project.
 
-No accounts, real payments, ads, analytics or remote AI calls. All gameplay runs locally. The Trelum logo belongs to the brand owner.
+## Files and verification
 
-## Project scope
+- index.html: game interface
+- style.css: responsive stage and character animation
+- state.js: scoring, collisions, spawning, difficulty and score validation
+- app.js: input, animation, sound, pause, result and local best score
+- cat-poses.png: three photographic cat poses, generated using the built-in image generation tool
 
-This is a prepared product showcase, not a claim that a particular child made it. The core ideas—buttons updating numbers, conditions, shuffled matching cards, ownership lists and saving data—can be built incrementally by a child with guidance and AI support. The polished presentation is a demonstration of what a finished project can become.
+Open index.html or serve this folder with a static server. No build step or dependencies.
 
-## Verification
+Source tests: `node --test state.test.cjs`. Browser QA checks real catches, increasing scores, missed catches, game over, replay, pause and persistent best score. Mobile layouts checked at 390px width. The old pet-care version is kept in the local archive-v1 folder and is not deployed.
 
-Run `node --test state.test.cjs` in the source folder. Tests cover care limits, once-per-adventure bonuses, purchasing and ownership, adventure gating, save validation and match rewards. Browser checks cover a completed memory round, shopping, persistent progress and a 390px mobile layout.
+## Cat image generation prompt
 
-## Hosting
+Built-in image generation; transparent background. Prompt: “Three separate full-body poses of the same realistic young ginger-and-white domestic cat, in three equal-width cells: sitting front-facing, crouched with one forepaw lifted, and an energetic hop with both front paws lifted. Natural anatomy, lifelike amber eyes, fine fur strands, photographic three-dimensional volume, warm studio light from upper left. Fixed camera, identical character size, all paws and tail inside the frame. Transparent background, no floor, props, text, clothing or cartoon styling.”
 
-A static GitHub Pages site, published from main / root. The deployment folder contains the game and brand assets only.
+Original image retained in the source project at assets/cat-poses.png. GitHub Pages publishes the flat deployment folder from main / root.
